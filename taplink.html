@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Links</title>
+    <link rel="shortcut icon" href="./mdv101_bootcamp/favicon-chip.ico">
     <style>
         body {
             background-color: #1e1e2e;
@@ -52,6 +53,32 @@
         .link-button:active {
             background-color: #2f2f4f;
         }
+
+        .link-button.featured {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+            color: #ffffff;
+            font-size: 16px;
+            box-shadow: 0 0 18px rgba(255, 107, 107, 0.6);
+            animation: pulse 1.8s infinite;
+        }
+
+        .link-button.featured:hover {
+            background: linear-gradient(135deg, #ff8e53, #ff6b6b);
+        }
+
+        .link-button.featured .badge {
+            display: block;
+            font-size: 13px;
+            font-weight: normal;
+            margin-top: 4px;
+            opacity: 0.95;
+        }
+
+        @keyframes pulse {
+            0%   { box-shadow: 0 0 12px rgba(255, 107, 107, 0.5); }
+            50%  { box-shadow: 0 0 24px rgba(255, 107, 107, 0.9); }
+            100% { box-shadow: 0 0 12px rgba(255, 107, 107, 0.5); }
+        }
     </style>
 </head>
 <body>
@@ -59,9 +86,7 @@
     <img src="./mdv101/assets/images/instructor.png" alt="Your Profile Photo" class="profile-photo">
 
     <div class="link-buttons">
-        <a href="https://kabylkas.github.io/mdv101/" class="link-button">Microprocessor Design Course (MDV101)</a>
-        <a href="https://kabylkas.github.io/mdv101/index.html#section-pricing" class="link-button">MDV101 Financial Aid Form</a>
-        <a href="https://wa.me/message/3MNRD4VS63RFI1" class="link-button">Ask us a question about MDV101</a>
+        <a href="https://kabylkas.github.io/mdv101_bootcamp/" class="link-button featured">🚀 MDV101 Bootcamp: Build Your Own CPU<span class="badge">Registration online now!</span></a>
         <a href="https://texer.ai" class="link-button">TEXER.AI</a>
         <a href="https://www.youtube.com/playlist?list=PLQARMI7sZ0x4_oBieClgkvBYOTE4ulVki" class="link-button">PhD Talks Podcast</a>
         <a href="https://kabylkas.github.io" class="link-button">Personal Webpage</a>
