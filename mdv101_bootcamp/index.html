@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>MDV101 Bootcamp — Fabricate Your Own CPU in 2 Weeks</title>
+	<title>MDV101 Bootcamp: Fabricate Your Own CPU in 2 Weeks</title>
 
 	<!-- Meta -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Stop consuming tech. Start building it. An elite 2-week intensive in Astana — architect and fabricate your own CPU. Limited, selective seats.">
+	<meta name="description" content="Stop consuming tech. Start building it. An elite 2-week intensive in Astana - architect and fabricate your own CPU. Limited, selective seats.">
 	<meta name="author" content="Texer.AI Academy | Preparing Next Generation Engineers">
 	<link rel="shortcut icon" href="favicon-chip.ico">
 
@@ -33,6 +33,37 @@
 	.shadow-lg {
 		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* Add shadow for emphasis */
 	}
+
+	/* Keep phrases (like date ranges) from breaking mid-way */
+	.nowrap { white-space: nowrap; }
+
+	/* ---- Mobile optimizations ---- */
+	@media (max-width: 575.98px) {
+		/* Prevent long words/links overflowing the screen */
+		body { overflow-x: hidden; }
+		p, li, .hero-heading-upper, .module-intro, .plan-content-list,
+		.faq-a, .review-item .quote p { overflow-wrap: break-word; word-wrap: break-word; }
+
+		/* Hero scales down so the big heading doesn't crowd small screens */
+		.hero-heading { font-size: 2rem; line-height: 1.2; }
+		.hero-heading-upper { font-size: 0.8rem; line-height: 1.6; }
+		.hero-section .desc { font-size: 1.05rem; }
+
+		/* Buttons go full-width and tappable instead of overflowing */
+		.btn-lg { width: 100%; white-space: normal; }
+
+		/* Countdown timer numbers fit four-across without overflow */
+		#timer .time-block { margin-left: 0.5rem !important; margin-right: 0.5rem !important; }
+		#timer .time { font-size: 1.8rem; }
+
+		/* Stat tiles get a little breathing room when they stack */
+		.data-summary .data { font-size: 2.2rem; }
+
+		/* Tighten heavy section padding so there's less endless scrolling */
+		.section { padding-top: 2rem !important; }
+		.py-5 { padding-top: 2rem !important; padding-bottom: 2rem !important; }
+		.p-5 { padding: 1.5rem !important; }
+	}
 	</style>
 
 </head>
@@ -45,14 +76,14 @@
 			</div><!--//hero-mask-->
 			<div class="container text-center py-5">
 				<div class="single-col-max mx-auto">
-					<div class="hero-heading-upper pt-3 mb-3">An Elite 2-Week Intensive · Astana · Aug 17–30 · 100% Free</div>
+					<div class="hero-heading-upper pt-3 mb-3"><span class="nowrap">An Elite 2-Week Intensive</span> · <span class="nowrap">Astana</span> · <span class="nowrap">Aug 17-30</span> · <span class="nowrap">100% Free</span></div>
 					<h1 class="hero-heading mb-4">
 						<span class="brand mb-4 d-block"><span class="text-highlight pr-2">{</span><span class="name">MDV101</span><span class="text-highlight pl-2">}</span> <span class="name">Bootcamp</span></span>
 					    <span class="desc d-block">Stop consuming tech. Start building it.<br>Architect &amp; fabricate your own CPU.</span>
 				    </h1>
-					<p class="text-white mb-4" style="font-size: 1.1rem; opacity: 0.9;">The goal here isn't just theory — it's fabrication. It's completely free, seats are strictly limited, and this time you'll have to earn yours. Applications close <strong>July 6</strong>.</p>
+					<p class="text-white mb-4" style="font-size: 1.1rem; opacity: 0.9;">The goal here isn't just theory - it's fabrication. It's completely free, seats are strictly limited, and this time you'll have to earn yours. Applications close <strong>July 6</strong>.</p>
 					<div class="text-center mb-4">
-						<a href="https://forms.gle/XBDmEw8Uj6Qjze916" target="_blank" class="btn btn-primary btn-lg">Apply Now — Limited Seats</a>
+						<a href="#section-pricing" class="btn btn-primary btn-lg scrollto">Apply Now (Limited Seats)</a>
 					</div>
 					<div class="text-center mb-5">
 						<a href="#section-overview" class="btn btn-link text-white scrollto" style="text-decoration: underline;">See if you can handle it ↓</a>
@@ -91,7 +122,7 @@
 					<div class="section-col-max mx-auto">
 						<h3 class="section-title mb-4">The Deep Dive</h3>
 						<p class="mb-4">
-							<strong>12 days. 6+ hours daily. Hardcore engineering designed to push your limits and bridge the gap between theory and reality.</strong> This is not a lecture series you watch from the comfort of your couch. It's a relentless, two-week sprint where every hour is spent building. By the end, you won't just understand how a processor works — you'll have architected and fabricated your own, from the ground up.
+							<strong>12 days. 6+ hours daily. Hardcore engineering designed to push your limits and bridge the gap between theory and reality.</strong> This is not a lecture series you watch from the comfort of your couch. It's a relentless, two-week sprint where every hour is spent building. By the end, you won't just understand how a processor works - you'll have architected and fabricated your own, from the ground up.
 						</p>
 						<p class="mb-4">
 							Accept the challenge: design and build your own CPU in just two weeks. No abstract exercises. No filler. Every participant designs their own processor from scratch using Verilog and C++, and every participant has a <strong>real chance to see their designed chip actually fabricated</strong>. Most people only read about this. You'll do it.
@@ -107,7 +138,7 @@
 							</ul>
 						</div><!--//text-center-->
 						<div class="text-center mb-5">
-							<a class="btn btn-primary" target="_blank" href="https://forms.gle/XBDmEw8Uj6Qjze916">I'm ready — Apply now</a>
+							<a class="btn btn-primary scrollto" href="#section-pricing">I'm ready - Apply now</a>
 						</div>
 					</div><!--//section-col-max-->
 				</div><!--//container-->
@@ -119,8 +150,8 @@
 	<section id="countdown" class="countdown-section text-center py-5" style="position: relative; background-image: url('./assets/images/count-down-bg.png'); background-size: cover; background-position: center;">
 		<div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7);"></div>
 		<div class="container" style="position: relative; z-index: 1;">
-			<h2 class="section-title mb-4 text-white">Applications Close July 6 — Don't Get Left Behind</h2>
-			<p class="mb-4 text-white">The clock is ticking. Applications close on <span id="start-date" class="font-weight-bold"></span>, and seats are strictly limited. The bootcamp itself runs August 17–30 in Astana — but if you don't apply in time, you won't even be in the running. Beat the countdown.</p>
+			<h2 class="section-title mb-4 text-white">Applications Close July 6 - Don't Get Left Behind</h2>
+			<p class="mb-4 text-white">The clock is ticking. Applications close on <span id="start-date" class="font-weight-bold"></span>, and seats are strictly limited. The bootcamp itself runs <span class="nowrap">August 17-30</span> in Astana, but if you don't apply in time, you won't even be in the running. Beat the countdown.</p>
 
 			<div id="timer" class="d-flex justify-content-center align-items-center">
 				<div class="time-block mx-3">
@@ -141,7 +172,7 @@
 				</div>
 			</div>
 			<div class="text-center mt-5">
-				<a class="btn btn-primary btn-lg" target="_blank" href="https://forms.gle/XBDmEw8Uj6Qjze916">Claim Your Seat Now</a>
+				<a class="btn btn-primary btn-lg scrollto" href="#section-pricing">Claim Your Seat Now</a>
 			</div>
 		</div>
 	</section>
@@ -170,7 +201,7 @@
 					            </div><!--//item-->
 					            <div class="item col-6 col-lg-3 mb-3 mb-lg-0">
 						            <div class="data">₸0</div>
-						            <div class="meta">100% free — costs you nothing but effort</div>
+						            <div class="meta">100% free - costs you nothing but effort</div>
 					            </div><!--//item-->
 				            </div><!--//row-->
 			            </div><!--//course-summary-->
@@ -183,14 +214,14 @@
 									<h4 class="module-title mb-0">
 										<a class="card-toggle module-toggle" href="#module-1" data-bs-toggle="collapse" data-bs-target="#module-1" aria-expanded="true" aria-controls="module-1">
 											<i class="module-toggle-icon fas fa-minus me-2"></i>
-											Mon, Aug 17 · Welcome &amp; Digital Circuits
+											<span class="nowrap">Mon, Aug 17</span> · Welcome &amp; Digital Circuits
 										</a>
 									</h4>
 								</div><!--//card-header-->
 								<div id="module-1" class="module-content collapse show" aria-labelledby="module-heading-1">
 									<div class="card-body p-0">
 									<div class="module-intro p-3">
-										Week 1 begins. We kick off with opening remarks and dive straight into the language of hardware — no slow ramp-up.
+										Week 1 begins. We kick off with opening remarks and dive straight into the language of hardware - no slow ramp-up.
 									</div>
 										<div class="module-sub-item p-3">
 											<div class="row justify-content-between">
@@ -212,7 +243,7 @@
 									<h4 class="module-title mb-0">
 										<a class="card-toggle module-toggle" href="#module-2" data-bs-toggle="collapse" data-bs-target="#module-2" aria-expanded="false" aria-controls="module-2">
 											<i class="module-toggle-icon fas fa-plus me-2"></i>
-											Tue, Aug 18 · Digital Circuits Deep Dive
+											<span class="nowrap">Tue, Aug 18</span> · Digital Circuits Deep Dive
 										</a>
 									</h4>
 								</div><!--//card-header-->
@@ -238,7 +269,7 @@
 									<h4 class="module-title mb-0">
 										<a class="card-toggle module-toggle" href="#module-3" data-bs-toggle="collapse" data-bs-target="#module-3" aria-expanded="false" aria-controls="module-3">
 											<i class="module-toggle-icon fas fa-plus me-2"></i>
-											Wed, Aug 19 · Your First CPU
+											<span class="nowrap">Wed, Aug 19</span> · Your First CPU
 										</a>
 									</h4>
 								</div><!--//card-header-->
@@ -264,7 +295,7 @@
 									<h4 class="module-title mb-0">
 										<a class="card-toggle module-toggle" href="#module-4" data-bs-toggle="collapse" data-bs-target="#module-4" aria-expanded="false" aria-controls="module-4">
 											<i class="module-toggle-icon fas fa-plus me-2"></i>
-											Thu, Aug 20 · Verilog HDL &amp; Verilator
+											<span class="nowrap">Thu, Aug 20</span> · Verilog HDL &amp; Verilator
 										</a>
 									</h4>
 								</div><!--//card-header-->
@@ -290,7 +321,7 @@
 									<h4 class="module-title mb-0">
 										<a class="card-toggle module-toggle" href="#module-5" data-bs-toggle="collapse" data-bs-target="#module-5" aria-expanded="false" aria-controls="module-5">
 											<i class="module-toggle-icon fas fa-plus me-2"></i>
-											Fri, Aug 21 · Verification &amp; miniRV
+											<span class="nowrap">Fri, Aug 21</span> · Verification &amp; miniRV
 										</a>
 									</h4>
 								</div><!--//card-header-->
@@ -303,7 +334,7 @@
 										</div><!--//module-sub-item-->
 										<div class="module-sub-item p-3">
 											<div class="row justify-content-between">
-												<div class="col-9"><span class="theme-text-secondary me-2">Afternoon</span>miniRV — a small subset of RISC-V with 8 instructions</div>
+												<div class="col-9"><span class="theme-text-secondary me-2">Afternoon</span>miniRV - a small subset of RISC-V with 8 instructions</div>
 											</div>
 										</div><!--//module-sub-item-->
 									</div><!--//card-body-->
@@ -316,7 +347,7 @@
 									<h4 class="module-title mb-0">
 										<a class="card-toggle module-toggle" href="#module-6" data-bs-toggle="collapse" data-bs-target="#module-6" aria-expanded="false" aria-controls="module-6">
 											<i class="module-toggle-icon fas fa-plus me-2"></i>
-											Sat, Aug 22 · Break
+											<span class="nowrap">Sat, Aug 22</span> · Break
 										</a>
 									</h4>
 								</div><!--//card-header-->
@@ -335,7 +366,7 @@
 									<h4 class="module-title mb-0">
 										<a class="card-toggle module-toggle" href="#module-7" data-bs-toggle="collapse" data-bs-target="#module-7" aria-expanded="false" aria-controls="module-7">
 											<i class="module-toggle-icon fas fa-plus me-2"></i>
-											Sun, Aug 23 · Runtime, Devices &amp; Games
+											<span class="nowrap">Sun, Aug 23</span> · Runtime, Devices &amp; Games
 										</a>
 									</h4>
 								</div><!--//card-header-->
@@ -361,7 +392,7 @@
 									<h4 class="module-title mb-0">
 										<a class="card-toggle module-toggle" href="#module-8" data-bs-toggle="collapse" data-bs-target="#module-8" aria-expanded="false" aria-controls="module-8">
 											<i class="module-toggle-icon fas fa-plus me-2"></i>
-											Mon, Aug 24 · Simple Bus
+											<span class="nowrap">Mon, Aug 24</span> · Simple Bus
 										</a>
 									</h4>
 								</div><!--//card-header-->
@@ -390,7 +421,7 @@
 									<h4 class="module-title mb-0">
 										<a class="card-toggle module-toggle" href="#module-9" data-bs-toggle="collapse" data-bs-target="#module-9" aria-expanded="false" aria-controls="module-9">
 											<i class="module-toggle-icon fas fa-plus me-2"></i>
-											Tue, Aug 25 · System-on-Chip
+											<span class="nowrap">Tue, Aug 25</span> · System-on-Chip
 										</a>
 									</h4>
 								</div><!--//card-header-->
@@ -416,7 +447,7 @@
 									<h4 class="module-title mb-0">
 										<a class="card-toggle module-toggle" href="#module-10" data-bs-toggle="collapse" data-bs-target="#module-10" aria-expanded="false" aria-controls="module-10">
 											<i class="module-toggle-icon fas fa-plus me-2"></i>
-											Wed, Aug 26 · Logic Synthesis
+											<span class="nowrap">Wed, Aug 26</span> · Logic Synthesis
 										</a>
 									</h4>
 								</div><!--//card-header-->
@@ -442,7 +473,7 @@
 									<h4 class="module-title mb-0">
 										<a class="card-toggle module-toggle" href="#module-11" data-bs-toggle="collapse" data-bs-target="#module-11" aria-expanded="false" aria-controls="module-11">
 											<i class="module-toggle-icon fas fa-plus me-2"></i>
-											Thu, Aug 27 · Break
+											<span class="nowrap">Thu, Aug 27</span> · Break
 										</a>
 									</h4>
 								</div><!--//card-header-->
@@ -461,7 +492,7 @@
 									<h4 class="module-title mb-0">
 										<a class="card-toggle module-toggle" href="#module-12" data-bs-toggle="collapse" data-bs-target="#module-12" aria-expanded="false" aria-controls="module-12">
 											<i class="module-toggle-icon fas fa-plus me-2"></i>
-											Fri, Aug 28 · Physical Design
+											<span class="nowrap">Fri, Aug 28</span> · Physical Design
 										</a>
 									</h4>
 								</div><!--//card-header-->
@@ -490,7 +521,7 @@
 									<h4 class="module-title mb-0">
 										<a class="card-toggle module-toggle" href="#module-13" data-bs-toggle="collapse" data-bs-target="#module-13" aria-expanded="false" aria-controls="module-13">
 											<i class="module-toggle-icon fas fa-plus me-2"></i>
-											Sat, Aug 29 · RISC-V 32 Processor
+											<span class="nowrap">Sat, Aug 29</span> · RISC-V 32 Processor
 										</a>
 									</h4>
 								</div><!--//card-header-->
@@ -516,7 +547,7 @@
 									<h4 class="module-title mb-0">
 										<a class="card-toggle module-toggle" href="#module-14" data-bs-toggle="collapse" data-bs-target="#module-14" aria-expanded="false" aria-controls="module-14">
 											<i class="module-toggle-icon fas fa-plus me-2"></i>
-											Sun, Aug 30 · Exception Handling &amp; Closing
+											<span class="nowrap">Sun, Aug 30</span> · Exception Handling &amp; Closing
 										</a>
 									</h4>
 								</div><!--//card-header-->
@@ -557,9 +588,9 @@
 					<div class="single-col-max mx-auto">
 						<h3 class="text-center mb-5">How Far Will You Push? The Rewards Are Real.</h3>
 						<p class="text-left mb-5">
-							This is an elite intensive, and we hold you to an elite standard. Your performance during the two weeks determines how far your reward goes — and the top tier is the one everyone is fighting for.<br><br>
+							This is an elite intensive, and we hold you to an elite standard. Your performance during the two weeks determines how far your reward goes - and the top tier is the one everyone is fighting for.<br><br>
 							Here's what's on the line:<br>
-							🥇 Hit the top tier and we'll <strong>fabricate your design</strong> — your chip, in real silicon, plus an internship opportunity.<br>
+							🥇 Hit the top tier and we'll <strong>fabricate your design</strong> - your chip, in real silicon, plus an internship opportunity.<br>
 							🥈 Push hard and earn a Certificate of Achievement, certification invitations, and a place in our alumni network.<br>
 							🎓 Finish strong and walk away with skills almost no one in the country has.<br><br>
 							The question isn't whether it's worth it. It's whether you'll show up and earn it.
@@ -609,7 +640,7 @@
 								<div class="col-12 col-lg-4 mb-4">
 									<div class="plan-item rounded">
 										<div class="plan-header">
-											<h4 class="plan-heading rounded-top p-3 theme-bg-primary">Top Tier — Silicon 🏆</h4>
+											<h4 class="plan-heading rounded-top p-3 theme-bg-primary">Top Tier: Silicon 🏆</h4>
 										</div><!--//plan-header-->
 										<div class="plan-details p-4">
 											<div class="plan-content px-3">
@@ -641,12 +672,12 @@
 			<div id="section-overview" class="section-overview section pt-md-4 pt-lg-5">
 				<div class="container py-5">
 					<div class="section-col-max mx-auto">
-						<h3 class="section-title mb-4">Open to Everyone — If You Can Get to Astana</h3>
+						<h3 class="section-title mb-4">Open to Everyone - If You Can Get to Astana</h3>
 						<p class="mb-4">
 							This bootcamp is open to <strong>everyone, regardless of where you're located</strong>, provided you can join us in person in Astana. It was inspiring to watch participants travel from across the country for our first cohort, and we can't wait to see that same fire this time. If you're willing to make the trip, we're willing to make you a chip designer.
 						</p>
 						<p class="mb-4">
-							A word of warning: this is hardcore. While no prior hardware experience is required, you'll move fast — basic programming knowledge is expected, and familiarity with C++ and comfort in a Linux environment will help you keep up. This is for people who are done watching from the sidelines and ready to build something real.
+							A word of warning: this is hardcore. While no prior hardware experience is required, you'll move fast - basic programming knowledge is expected, and familiarity with C++ and comfort in a Linux environment will help you keep up. This is for people who are done watching from the sidelines and ready to build something real.
 						</p>
 						<div class="text-center mb-3">
 							<ul class="column-list list-unstyled mx-auto d-inline-block">
@@ -659,7 +690,7 @@
 							</ul>
 						</div><!--//text-center-->
 						<div class="text-center mb-5">
-							<a class="btn btn-primary" target="_blank" href="https://forms.gle/XBDmEw8Uj6Qjze916">Start my application</a>
+							<a class="btn btn-primary scrollto" href="#section-pricing">Start my application</a>
 						</div>
 					</div><!--//section-col-max-->
 				</div><!--//container-->
@@ -683,13 +714,13 @@
 								<div class="pl-lg-4">
 									<h3 class="section-title mb-4 text-white text-lg-start">Learn From World-Class Minds</h3>
 									<p>
-										This isn't a course taught by someone reading a textbook one chapter ahead of you. You'll work directly under the guidance of <strong>top instructors from the Chinese Academy of Sciences</strong> — minds at the very forefront of global semiconductor research. This is the level of mentorship most people never get access to, brought directly to you in Astana.
+										This isn't a course taught by someone reading a textbook one chapter ahead of you. You'll work directly under the guidance of <strong>top instructors from the Chinese Academy of Sciences</strong> - minds at the very forefront of global semiconductor research. This is the level of mentorship most people never get access to, brought directly to you in Astana.
 									</p>
 									<p>
 										And it gets better: <strong>our TAs are returning from their internships in China</strong> specifically to pass their hard-won knowledge on to you. Fresh off the frontier, they'll be in the room, in the trenches, helping you debug, design, and ship.
 									</p>
 									<p>
-										The bootcamp is led by Nursultan Kabylkas, Assistant Professor at Nazarbayev University and a University of California, Santa Cruz graduate with deep Silicon Valley experience — he interned at Esperanto Technologies designing a multi-core AI accelerator, and at AMD, where he continues to contribute to their GPU ISA project. He believes Kazakhstan can become a global leader in semiconductors, and this bootcamp is how he's building that future — one chip designer at a time.
+										The bootcamp is led by Nursultan Kabylkas, Assistant Professor at Nazarbayev University and a University of California, Santa Cruz graduate with deep Silicon Valley experience - he interned at Esperanto Technologies designing a multi-core AI accelerator, and at AMD, where he continues to contribute to their GPU ISA project. He believes Kazakhstan can become a global leader in semiconductors, and this bootcamp is how he's building that future - one chip designer at a time.
 									</p>
 									<div class="text-center text-lg-start">
 										<ul class="social-list list-unstyled mt-4 mb-0 mx-auto mx-lg-0">
@@ -845,7 +876,7 @@
 											</g>
 										</svg><!--//quote-icon-->
 									</div>
-									<p>This program helped me develop my intuition about hardware. Theory is, of course, valuable, but when you build something, you encounter certain aspects firsthand, which gives you a deeper understanding of processors—even if it’s a simple one.</p>
+									<p>This program helped me develop my intuition about hardware. Theory is, of course, valuable, but when you build something, you encounter certain aspects firsthand, which gives you a deeper understanding of processors, even if it’s a simple one.</p>
 								</blockquote><!--//quote-->
 								<div class="source">
 									<div class="row align-items-center">
@@ -920,7 +951,7 @@
 											</g>
 										</svg><!--//quote-icon-->
 									</div>
-									<p>I really enjoyed this course. Before taking this course, my knowledge about computer systems was limited to a basic understanding of processors, assembly language, and binaries (from NU course CS231). However, this course gave me a much deeper understanding of how processors are designed, how they execute binary instructions, and how they interact with memory. As part of the coursework, I even created my own Turing-complete assembly language. The code of this language can then be converted into binary code and run on a processor to produce meaningful results.<br><br>We also explored advanced processor architecture topics, like branch prediction, cache coherence, and pipeline hazards. While these were covered briefly during lectures, it was enough to grasp how they work at an industry-standard level. Overall, I would highly recommend this course—not just for those interested in hardware development and computer engineering, but also for software engineers and computer scientists. Understanding how computers work at a low level is incredibly valuable for debugging and diagnosing potential issues.</p>
+									<p>I really enjoyed this course. Before taking this course, my knowledge about computer systems was limited to a basic understanding of processors, assembly language, and binaries (from NU course CS231). However, this course gave me a much deeper understanding of how processors are designed, how they execute binary instructions, and how they interact with memory. As part of the coursework, I even created my own Turing-complete assembly language. The code of this language can then be converted into binary code and run on a processor to produce meaningful results.<br><br>We also explored advanced processor architecture topics, like branch prediction, cache coherence, and pipeline hazards. While these were covered briefly during lectures, it was enough to grasp how they work at an industry-standard level. Overall, I would highly recommend this course, not just for those interested in hardware development and computer engineering, but also for software engineers and computer scientists. Understanding how computers work at a low level is incredibly valuable for debugging and diagnosing potential issues.</p>
 								</blockquote><!--//quote-->
 								<div class="source">
 									<div class="row align-items-center">
@@ -1098,9 +1129,9 @@
     <div class="section-blocks mb-5">
         <div id="section-pricing" class="section-pricing py-5">
             <div class="container-fluid" style="max-width: 90%;"> <!-- Full-width container with a max-width constraint -->
-                <h3 class="text-center mb-4">Completely Free — But You Have to Earn Your Seat</h3>
+                <h3 class="text-center mb-4">Completely Free - But You Have to Earn Your Seat</h3>
                 <p class="text-center mb-5 mx-auto" style="max-width: 760px;">
-                    Here's the part that sounds too good to be true: this bootcamp is <strong>100% free</strong>. No tuition, no hidden fees. The only currency we accept is effort. We took everything we learned from our first cohort and made this one even better — and even more exclusive. To protect a high standard of engineering, we're introducing a <strong>selective application process</strong>: applicants must complete specific technical tasks before joining. Not everyone who applies will get in. Are you ready for the challenge?
+                    Here's the part that sounds too good to be true: this bootcamp is <strong>100% free</strong>. No tuition, no hidden fees. The only currency we accept is effort. We took everything we learned from our first cohort and made this one even better - and even more exclusive. To protect a high standard of engineering, we're introducing a <strong>selective application process</strong>: applicants must complete specific technical tasks before joining. Not everyone who applies will get in. Are you ready for the challenge?
                 </p>
                 <div class="pricing-plan">
                     <div class="row justify-content-center">
@@ -1111,13 +1142,13 @@
                                 </div>
                                 <div class="plan-details p-5">
                                     <ul class="list-unstyled mb-4" style="font-size: 1.05rem;">
-                                        <li class="mb-3"><i class="fas fa-pen-nib text-primary me-2"></i><strong>1. Apply.</strong> Submit your application through the form below — it only takes a few minutes.</li>
+                                        <li class="mb-3"><i class="fas fa-pen-nib text-primary me-2"></i><strong>1. Apply.</strong> Submit your application through the form below - it only takes a few minutes.</li>
                                         <li class="mb-3"><i class="fas fa-code text-primary me-2"></i><strong>2. Prove it.</strong> Complete the technical tasks we send you. This is how we make sure every person in the room is serious.</li>
                                         <li class="mb-3"><i class="fas fa-rocket text-primary me-2"></i><strong>3. Get in &amp; build.</strong> Accepted? Pack your bags for Astana and get ready to fabricate your own CPU.</li>
                                     </ul>
                                     <div class="text-center mt-4">
                                         <a class="btn btn-primary btn-lg" target="_blank" href="https://forms.gle/XBDmEw8Uj6Qjze916">Register / Apply Now →</a>
-                                        <p class="mt-3 mb-0" style="font-size: 0.9rem; color: #888;">Free to join, but seats are strictly limited. Applications close July 6 — don't wait until they're gone.</p>
+                                        <p class="mt-3 mb-0" style="font-size: 0.9rem; color: #888;">Free to join, but seats are strictly limited. Applications close July 6 - don't wait until they're gone.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1146,31 +1177,31 @@
 									<div class="item">
 										<h4 class="faq-q mb-2"><i class="far fa-question-circle me-2 text-primary"></i>How does the selective application process work?</h4>
 										<div class="faq-a">
-											<p>We learned a lot from our first cohort, and one big takeaway was this: the magic happens when everyone in the room is genuinely committed and ready to engineer. So this time we're being selective. After you submit the application form, we'll send you specific technical tasks to complete. These tasks help us ensure a high standard of engineering across the group — and honestly, they're your first taste of the challenge ahead. Complete them, impress us, and you're in.</p>
+											<p>We learned a lot from our first cohort, and one big takeaway was this: the magic happens when everyone in the room is genuinely committed and ready to engineer. So this time we're being selective. After you submit the application form, we'll send you specific technical tasks to complete. These tasks help us ensure a high standard of engineering across the group - and honestly, they're your first taste of the challenge ahead. Complete them, impress us, and you're in.</p>
 										</div>
 									</div><!--//item-->
 									<div class="item">
 										<h4 class="faq-q mb-2"><i class="far fa-question-circle me-2 text-primary"></i>Where and when does the bootcamp take place?</h4>
 										<div class="faq-a">
-											<p>The bootcamp runs in person in <strong>Astana</strong> over two intense weeks — 12 days, 6+ hours daily. It's open to everyone regardless of where you're located, as long as you can join us in Astana for the duration. For our first cohort, participants traveled from all over the country, and that energy was electric. If you're committed enough to make the trip, you're exactly who we're looking for.</p>
+											<p>The bootcamp runs in person in <strong>Astana</strong> over two intense weeks - 12 days, 6+ hours daily. It's open to everyone regardless of where you're located, as long as you can join us in Astana for the duration. For our first cohort, participants traveled from all over the country, and that energy was electric. If you're committed enough to make the trip, you're exactly who we're looking for.</p>
 										</div>
 									</div><!--//item-->
 									<div class="item">
 										<h4 class="faq-q mb-2"><i class="far fa-question-circle me-2 text-primary"></i>Who is this bootcamp for?</h4>
 										<div class="faq-a">
-											<p>This is for people who are done just consuming technology and want to start building it. Curious students, aspiring engineers, software developers who want to understand the silicon underneath their code — if you're ambitious and ready to work hard, you belong here. No prior hardware experience is required, but you'll move fast, so basic programming knowledge is expected. Familiarity with C++ and Linux will help you keep pace.</p>
+											<p>This is for people who are done just consuming technology and want to start building it. Curious students, aspiring engineers, software developers who want to understand the silicon underneath their code - if you're ambitious and ready to work hard, you belong here. No prior hardware experience is required, but you'll move fast, so basic programming knowledge is expected. Familiarity with C++ and Linux will help you keep pace.</p>
 										</div>
 									</div><!--//item-->
 									<div class="item">
 										<h4 class="faq-q mb-2"><i class="far fa-question-circle me-2 text-primary"></i>Will I really get to fabricate my own chip?</h4>
 										<div class="faq-a">
-											<p>Yes — that's the whole point. There are no abstract exercises here. Every participant designs their own processor from the ground up using Verilog and C++, and every participant has a real chance to see their design <strong>actually fabricated</strong>. Most engineers go their entire careers without taping out a chip. You could do it two weeks after walking through the door.</p>
+											<p>Yes - that's the whole point. There are no abstract exercises here. Every participant designs their own processor from the ground up using Verilog and C++, and every participant has a real chance to see their design <strong>actually fabricated</strong>. Most engineers go their entire careers without taping out a chip. You could do it two weeks after walking through the door.</p>
 										</div>
 									</div><!--//item-->
 									<div class="item" id="faq-financial-aid">
 										<h4 class="faq-q mb-2"><i class="far fa-question-circle me-2 text-primary"></i>Is it really free? What's the catch?</h4>
 										<div class="faq-a">
-											<p>Yes — the bootcamp is completely free. No tuition, no hidden costs. There's no catch, but there is a bar: because we invest serious resources, world-class instructors, and hands-on fabrication into every participant, we keep the cohort small and selective. The "price" is your effort — you'll need to pass the technical tasks to get in, and then show up ready to work hard for two intense weeks. Bring that, and the rest is on us.</p>
+											<p>Yes - the bootcamp is completely free. No tuition, no hidden costs. There's no catch, but there is a bar: because we invest serious resources, world-class instructors, and hands-on fabrication into every participant, we keep the cohort small and selective. The "price" is your effort - you'll need to pass the technical tasks to get in, and then show up ready to work hard for two intense weeks. Bring that, and the rest is on us.</p>
 										</div>
 									</div><!--//item-->
 								</div><!--//faq-items-->
