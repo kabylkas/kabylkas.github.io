@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Empty your head, build a flow, and take back your life with Kaizen planning. A book by Nursultan Kabylkas.">
+<meta property="og:title" content="The Night of 136 Sticky Notes">
+<meta property="og:description" content="Empty your head, build a flow, and take back your life with Kaizen planning. A book by Nursultan Kabylkas.">
+<meta property="og:type" content="book">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  /* No safe-area padding on :root: the page's own dark bands bleed under the
+     notch instead, and the hero and footer add the insets to their padding. */
+  :root{color-scheme:light}
+  body{margin:0}
+  img{max-width:100%}
+  [hidden]{display:none!important}
+</style>
+<title>The Night of 136 Sticky Notes</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,600;1,9..144,700&family=Lato:wght@400;700;900&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Caveat:wght@500;600&display=swap">
+
+<style>
+  /* Single committed visual world: a windowless lab at 1:04 AM, and the paper wall in it.
+     Every color is painted explicitly so the page holds on any host ground. */
+  :root{
+    --ink:#10141a;
+    --ink-2:#181e27;
+    --ink-deep:#0a0d12;
+    --ink-line:#2b3441;      /* decorative only */
+    --ink-edge:#56616e;      /* anything that must actually read on ink */
+    --on-ink:#f0ece4;
+    --on-ink-dim:#97a3b2;
+
+    --paper:#e9e6de;
+    --paper-2:#d8d3c6;
+    --card:#fbfaf7;
+    --text:#191c21;
+    --text-dim:#535a64;
+    --rule:#c9c4b8;
+
+    /* the five areas, in sticky-note stock */
+    --n-dev:#b3cd93;
+    --n-fam:#f2a693;
+    --n-work:#f2ce55;
+    --n-soc:#96b9de;
+    --n-hob:#c6a9dd;
+
+    --cta:#f2ce55;
+    --cta-press:#e0bb3d;
+
+    --max:1120px;
+    --read:66ch;
+  }
+
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--paper);
+    color:var(--text);
+    font-family:"Lato",system-ui,-apple-system,"Segoe UI",sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    margin:0;
+  }
+  *{box-sizing:border-box}
+  h1,h2,h3{font-family:"Fraunces","Iowan Old Style",Georgia,serif;font-weight:600;text-wrap:balance;margin:0;line-height:1.12}
+  p{margin:0}
+  a{color:inherit}
+  [hidden]{display:none!important}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+  .wrap{
+    width:100%;max-width:var(--max);margin-inline:auto;
+    padding-left:max(20px,env(safe-area-inset-left));
+    padding-right:max(20px,env(safe-area-inset-right));
+  }
+  .band{padding-block:clamp(56px,8vw,100px)}
+  .band-paper{background:var(--paper)}
+  .band-deep{background:var(--ink);color:var(--on-ink)}
+  .band-alt{background:var(--paper-2)}
+
+  .eyebrow{font-size:12px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--text-dim)}
+  .band-deep .eyebrow{color:var(--on-ink-dim)}
+
+  /* ---------- hero ---------- */
+  .hero{background:var(--ink);color:var(--on-ink);
+    padding-block:calc(clamp(40px,5vw,68px) + env(safe-area-inset-top,0px)) clamp(56px,7vw,92px);
+    position:relative;overflow:hidden}
+  .hero::after{ /* the one fluorescent tube still on */
+    content:"";position:absolute;inset:-30% 40% 55% -20%;
+    background:radial-gradient(60% 60% at 40% 50%,rgba(242,206,85,.10),rgba(242,206,85,0) 70%);
+    pointer-events:none;
+  }
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:clamp(30px,4vw,56px);align-items:center;position:relative;z-index:1}
+  h1{font-size:clamp(36px,6.2vw,66px);letter-spacing:-.015em;color:var(--on-ink)}
+  h1 .count{color:var(--n-work);font-style:italic}
+  .hero-pull{
+    font-family:"EB Garamond",Georgia,serif;font-style:italic;
+    font-size:clamp(19px,2.4vw,23px);line-height:1.4;color:var(--on-ink);
+    margin-top:20px;padding-left:16px;border-left:2px solid var(--n-work);max-width:32ch;
+  }
+  .deck{font-size:17px;color:var(--on-ink-dim);margin-top:20px;max-width:48ch;line-height:1.55}
+  .byline{margin-top:22px;font-size:15px;font-weight:900;color:var(--on-ink)}
+  .byline span{display:block;font-size:13.5px;color:var(--on-ink-dim);font-weight:400;margin-top:3px}
+
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:28px}
+  .btn{
+    display:inline-block;font-family:"Lato",sans-serif;font-weight:900;font-size:15px;letter-spacing:.02em;
+    padding:15px 26px;border-radius:2px;text-decoration:none;cursor:pointer;
+    background:var(--cta);color:#191c21;border:1px solid var(--cta);
+    transition:transform .12s ease,background .12s ease;
+  }
+  .btn:hover{background:var(--cta-press);transform:translateY(-1px)}
+  .btn:active{transform:translateY(0)}
+  .btn-ghost{background:transparent;color:var(--on-ink);border:1px solid var(--on-ink-dim);font-weight:700}
+  .btn-ghost:hover{background:var(--ink-2);border-color:var(--on-ink)}
+  a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{
+    outline:3px solid #fff;outline-offset:2px;box-shadow:0 0 0 8px #10141a;border-radius:2px;
+  }
+  .fineprint{font-size:13.5px;color:var(--on-ink-dim);margin-top:16px;max-width:48ch}
+  .fineprint b{color:var(--n-work);font-weight:900;letter-spacing:.04em}
+
+  /* ---------- the book, built in CSS ---------- */
+  .book-scene{display:flex;flex-direction:column;align-items:center;gap:22px}
+  .book{--bw:clamp(168px,21vw,222px);--bh:calc(var(--bw)*1.5);--spine:24px;
+    position:relative;width:calc(var(--bw) + var(--spine) + 6px);perspective:1500px;flex:0 0 auto}
+  .book-inner{position:relative;width:var(--bw);height:var(--bh);margin-left:var(--spine);
+    transform:rotateY(-15deg) rotateZ(-1.2deg);transform-origin:left center}
+  .book-face{
+    position:absolute;inset:0;
+    background:radial-gradient(120% 90% at 18% 0%,#1f2833 0%,#0c1015 64%);
+    border-radius:1px 4px 4px 1px;
+    box-shadow:0 34px 64px rgba(0,0,0,.6),0 4px 12px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.07);
+    padding:clamp(15px,7%,24px);padding-left:calc(var(--spine) + 8px);
+    display:flex;flex-direction:column;overflow:hidden;
+  }
+  .book-face::before{content:"";position:absolute;left:0;top:0;bottom:0;width:var(--spine);
+    background:linear-gradient(90deg,rgba(0,0,0,.62) 0%,rgba(0,0,0,.3) 40%,rgba(255,255,255,.08) 58%,rgba(0,0,0,.34) 100%)}
+  .book-inner::after{content:"";position:absolute;right:-6px;top:5px;bottom:5px;width:6px;
+    background:repeating-linear-gradient(180deg,#e9e6de 0 2px,#c2bcae 2px 3px);border-radius:0 3px 3px 0;transform:skewY(-.8deg)}
+  .book::after{content:"";position:absolute;left:14%;right:-4%;bottom:-18px;height:28px;
+    background:radial-gradient(50% 50% at 50% 50%,rgba(0,0,0,.55),transparent 72%);filter:blur(7px);pointer-events:none}
+  .cover-swatches{display:flex;gap:6px;margin-bottom:auto}
+  .cover-swatches i{display:block;width:calc(var(--bw)*.062);height:calc(var(--bw)*.062);box-shadow:0 2px 4px rgba(0,0,0,.45)}
+  .cover-title{font-family:"Fraunces",Georgia,serif;font-weight:600;color:var(--on-ink);
+    font-size:calc(var(--bw)*.128);line-height:1.04;letter-spacing:-.01em}
+  .cover-title em{font-style:italic;color:var(--n-work)}
+  .cover-sub{font-size:calc(var(--bw)*.056);line-height:1.35;color:var(--on-ink-dim);margin-top:calc(var(--bw)*.045)}
+  .cover-foot{margin-top:calc(var(--bw)*.07);padding-top:calc(var(--bw)*.05);border-top:1px solid rgba(255,255,255,.16);
+    font-size:calc(var(--bw)*.05);font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--on-ink)}
+  .cover-note{font-size:12px;color:var(--on-ink-dim);text-align:center;letter-spacing:.04em}
+  .wall{display:flex;flex-wrap:wrap;gap:11px;justify-content:center;max-width:420px}
+  .note{
+    font-family:"Caveat",ui-rounded,cursive;font-weight:600;
+    font-size:18px;line-height:1.24;color:#1b1a14;
+    width:124px;min-height:124px;padding:13px 12px;display:flex;align-items:flex-start;
+    overflow-wrap:anywhere;hyphens:auto;min-width:0;
+    box-shadow:0 10px 20px rgba(0,0,0,.34);
+  }
+  .note.n1{background:var(--n-work);transform:rotate(-2.4deg)}
+  .note.n2{background:var(--n-fam);transform:rotate(1.8deg)}
+  .note.n3{background:var(--n-soc);transform:rotate(-1.1deg)}
+  .note.n4{background:var(--n-dev);transform:rotate(2.6deg)}
+  .note.first{position:relative}
+  .note.first::after{content:"#1";position:absolute;right:9px;bottom:6px;
+    font-family:"Lato",sans-serif;font-size:10px;font-weight:900;letter-spacing:.1em;color:rgba(0,0,0,.42)}
+  .wall-cap{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--on-ink-dim);text-align:center}
+
+  /* ---------- generic ---------- */
+  .section-head{max-width:var(--read)}
+  h2{font-size:clamp(27px,4.1vw,41px);letter-spacing:-.01em;margin-top:14px}
+  .band-deep h2{color:var(--on-ink)}
+  .lede{font-size:18px;color:var(--text-dim);margin-top:18px;max-width:var(--read)}
+  .band-deep .lede{color:var(--on-ink-dim)}
+
+  /* ---------- excerpt ---------- */
+  .read-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(28px,4vw,52px);align-items:start;margin-top:40px}
+  .excerpt{background:var(--card);border:1px solid var(--rule);box-shadow:0 22px 50px rgba(0,0,0,.09);
+    padding:clamp(28px,5vw,52px) clamp(22px,5vw,54px)}
+  .excerpt .chap{font-family:"Lato",sans-serif;font-size:11px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim)}
+  .excerpt h3{font-family:"EB Garamond",Georgia,serif;font-size:27px;font-weight:500;margin:14px 0 24px;color:var(--text)}
+  .excerpt p{font-family:"EB Garamond",Georgia,serif;font-size:19px;line-height:1.58;margin-bottom:16px;color:var(--text)}
+  .excerpt .rule-line{font-weight:500;font-size:21px;text-align:center;margin:28px 0;padding:22px 10px;border-block:1px solid var(--rule)}
+  .rules-side h3{font-size:17px;font-family:"Lato",sans-serif;font-weight:900;letter-spacing:.02em;margin-bottom:6px}
+  .rules-side p{font-family:"EB Garamond",Georgia,serif;font-size:19px;line-height:1.45;padding:16px 0;border-bottom:1px solid var(--rule);color:var(--text)}
+  .rules-side p:first-of-type{border-top:1px solid var(--rule)}
+  .rules-side .src{font-family:"Lato",sans-serif;font-size:13px;color:var(--text-dim);border:0;padding-top:14px}
+
+  .claim{font-family:"Fraunces",Georgia,serif;font-size:clamp(26px,4vw,40px);line-height:1.25;text-wrap:balance;max-width:24ch;margin:20px 0 0}
+  .band-deep .claim em{font-style:italic;color:var(--n-work)}
+  .figures{display:flex;flex-wrap:wrap;gap:12px 40px;margin-top:34px;border-top:1px solid var(--ink-edge);padding-top:22px}
+  .figures div{font-size:14.5px;color:var(--on-ink-dim)}
+  .figures b{font-family:"Lato",sans-serif;font-weight:900;color:var(--on-ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+
+  .symptoms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule);margin-top:44px;border:1px solid var(--rule)}
+  .symptom{background:var(--card);padding:26px 24px}
+  .symptom p{font-size:16px;line-height:1.6}
+  .symptom .when{font-family:"Lato",sans-serif;font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--text-dim);display:block;margin-bottom:12px}
+
+  /* ---------- bottle ---------- */
+  .bottle{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:44px}
+  .beat{background:var(--card);border:1px solid var(--rule);padding:24px 22px}
+  .beat .t{font-family:"Fraunces",Georgia,serif;font-size:40px;font-weight:600;line-height:1;font-variant-numeric:tabular-nums}
+  .beat .t s{text-decoration:none;font-size:20px;color:var(--text-dim)}
+  .beat .lbl{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--text-dim);margin:14px 0 10px}
+  .beat p{font-size:15.5px;line-height:1.55;color:var(--text-dim)}
+  .beat.last{background:var(--ink);border-color:var(--ink)}
+  .beat.last .t{color:var(--n-work)}
+  .beat.last .lbl,.beat.last p{color:var(--on-ink-dim)}
+
+  /* ---------- board ---------- */
+  .board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:44px;align-items:start}
+  .col{background:var(--card);border:1px solid var(--rule);padding:20px 18px 22px}
+  .col-num{display:block;font-size:11px;font-weight:900;letter-spacing:.14em;color:var(--text-dim);margin-bottom:8px}
+  .col-head{padding-bottom:12px;border-bottom:3px solid var(--swatch);margin-bottom:16px}
+  .col-head h3{font-size:19px;line-height:1.2}
+  .col ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+  .col li{font-size:15px;line-height:1.45;padding-left:16px;position:relative}
+  .col li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;background:var(--swatch)}
+  .col.p1{--swatch:var(--n-fam)}
+  .col.p2{--swatch:var(--n-work)}
+  .col.p3{--swatch:var(--n-dev)}
+  .col.p4{--swatch:var(--n-soc)}
+  .col .extra{font-size:13.5px;color:var(--text-dim);margin-top:16px;padding-top:14px;border-top:1px dashed var(--rule)}
+
+  .diagram{margin:44px 0 0;background:var(--card);border:1px solid var(--rule);padding:26px 22px}
+  .diagram-scroll{overflow-x:auto;overscroll-behavior-x:contain}
+  .diagram svg{display:block;width:100%;min-width:460px;height:auto;color:var(--text)}
+  .diagram figcaption{font-size:13.5px;color:var(--text-dim);margin-top:16px;text-align:center}
+
+  /* ---------- for / not for ---------- */
+  .fit{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:44px}
+  .fit-col{padding:28px 26px;border:1px solid var(--rule);background:var(--card)}
+  .fit-col.no{background:transparent}
+  .fit-col h3{font-size:20px;margin-bottom:18px}
+  .fit-col ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+  .fit-col li{font-size:16px;line-height:1.5;padding-left:26px;position:relative;color:var(--text-dim)}
+  .fit-col li::before{position:absolute;left:0;top:0;font-weight:900;font-size:15px}
+  .fit-col.yes li::before{content:"✓";color:#3f6b3a}
+  .fit-col.no li::before{content:"✕";color:#8a4a3f}
+
+  /* ---------- author ---------- */
+  .author{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,58px);align-items:start}
+  .author p{margin-top:18px;font-size:17px}
+  .author .first{font-size:18.5px}
+  .logbook{background:var(--card);border:1px solid var(--rule);padding:26px 24px}
+  .logbook h3{font-size:17px;font-family:"Lato",sans-serif;font-weight:900;letter-spacing:.02em}
+  .logbook .rows{display:grid;gap:0;margin-top:16px}
+  .logbook .row{display:flex;align-items:baseline;gap:14px;padding:13px 0;border-top:1px solid var(--rule)}
+  .logbook .row b{font-family:"Fraunces",Georgia,serif;font-size:28px;font-weight:600;color:var(--text);min-width:42px;font-variant-numeric:tabular-nums}
+  .logbook .row span{font-size:15px;color:var(--text-dim);line-height:1.4}
+  .logbook .foot{font-size:14.5px;color:var(--text-dim);margin-top:16px;padding-top:14px;border-top:1px solid var(--rule)}
+  .cred{margin-top:24px;font-size:15px;color:var(--text-dim)}
+
+  /* ---------- AI / disclosure ---------- */
+  .split{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(28px,5vw,60px);align-items:start}
+  .chapter-list{display:grid;gap:14px}
+  .chapter-row{border-top:1px solid var(--ink-edge);padding-top:14px}
+  .chapter-row h3{font-size:16.5px;color:var(--on-ink);font-family:"Lato",sans-serif;font-weight:900}
+  .chapter-row h3 .n{font-family:"Fraunces",Georgia,serif;font-weight:600;color:var(--n-work);margin-right:10px}
+  .chapter-row p{font-size:14.5px;color:var(--on-ink-dim);margin-top:5px}
+
+  /* ---------- signup ---------- */
+  .signup-band{background:var(--ink);color:var(--on-ink)}
+  .signup-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(26px,4vw,54px);align-items:start}
+  .signup{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+  .signup input{
+    flex:1 1 220px;min-width:0;font-family:"Lato",sans-serif;font-size:16px;padding:14px 16px;
+    background:var(--ink-deep);color:var(--on-ink);border:1px solid var(--ink-edge);border-radius:2px;
+  }
+  .signup input::placeholder{color:#6f7a87}
+  .signup-msg{margin-top:16px;font-size:15px}
+  .signup-msg.ok{color:var(--n-dev)}
+  .signup-msg.err{color:var(--n-fam)}
+  .signup-note{font-size:13.5px;color:var(--on-ink-dim);margin-top:16px}
+  .sheet{border:1px solid var(--ink-edge);padding:24px 22px;background:var(--ink-2)}
+  .sheet h3{font-size:16px;font-family:"Lato",sans-serif;font-weight:900;color:var(--on-ink);letter-spacing:.02em}
+  .sheet ul{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:11px}
+  .sheet li{font-size:15px;color:var(--on-ink-dim);padding-left:20px;position:relative;line-height:1.45}
+  .sheet li::before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;background:var(--n-work)}
+
+  footer{background:var(--ink-deep);color:var(--on-ink-dim);border-top:1px solid var(--ink-edge);
+    padding-block:34px calc(34px + env(safe-area-inset-bottom,0px));font-size:14px}
+  .foot{display:grid;gap:12px}
+  .foot p{max-width:82ch}
+  .foot a{color:var(--on-ink);text-decoration:underline;text-underline-offset:3px}
+
+  @media (max-width:960px){
+    .hero-grid,.split,.author,.signup-grid,.read-grid{grid-template-columns:1fr}
+    .book-scene{flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:26px}
+    .wall{max-width:none;justify-content:flex-start;flex:1 1 260px}
+    .wall-cap,.cover-note{text-align:left;flex-basis:100%}
+    .deck,.hero-pull{max-width:none}
+  }
+  @media (max-width:720px){
+    .bottle,.fit,.symptoms{grid-template-columns:1fr}
+    .board{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .wall{gap:10px}
+    .note{width:calc(50% - 5px);min-height:108px;font-size:17px}
+  }
+  @media (max-width:560px){
+    .cta-row .btn{flex:1 1 100%;text-align:center;padding-block:17px}
+    .signup input,.signup button{flex:1 1 100%}
+    .board{grid-template-columns:1fr}
+    .book{--bw:172px}
+    .book-scene{gap:20px}
+    .figures{gap:10px 24px}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+</head>
+<body>
+<!-- =================== HERO =================== -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>The Night of <span class="count">136</span> Sticky Notes</h1>
+      <p class="hero-pull">A browser with two hundred tabs open, every one of them playing sound.</p>
+      <p class="deck">That was my head at 1:04 AM in a windowless lab: a PhD, a teaching load, an international student's summers spent earning the rent for the rest of the year, two small kids, a company I could not legally start and could not stop thinking about. Two hours and one pad of sticky notes later, my head was empty. This book is the system that kept it that way, including the years I abandoned it.</p>
+      <p class="byline">Nursultan Kabylkas<span>PhD, UC Santa Cruz. Years at AMD. Now teaching, building, and still running an hour in front of a board every morning.</span></p>
+      <div class="cta-row">
+        <a class="btn" data-buy href="#session">Send me the session sheet</a>
+        <a class="btn btn-ghost" href="#excerpt">Read a page first</a>
+      </div>
+      <p class="fineprint"><b>Launching soon.</b> Paperback and Kindle. Four parts, sixteen chapters, three appendices.</p>
+    </div>
+
+    <div class="book-scene">
+      <div class="book" role="img" aria-label="The Night of 136 Sticky Notes, paperback, by Nursultan Kabylkas">
+        <div class="book-inner" aria-hidden="true">
+          <div class="book-face">
+            <div class="cover-swatches"><i style="background:var(--n-dev);transform:rotate(-6deg)"></i><i style="background:var(--n-fam);transform:rotate(4deg)"></i><i style="background:var(--n-work);transform:rotate(-3deg)"></i><i style="background:var(--n-soc);transform:rotate(7deg)"></i><i style="background:var(--n-hob);transform:rotate(-5deg)"></i></div>
+            <p class="cover-title">The Night of <em>136</em> Sticky Notes</p>
+            <p class="cover-sub">Empty your head, build a flow, and take back your life with Kaizen planning</p>
+            <p class="cover-foot">Nursultan Kabylkas</p>
+          </div>
+        </div>
+      </div>
+      <div class="wall">
+        <div class="note n1 first">empty your head</div>
+        <div class="note n3">Email the TA about lab 4 grading.</div>
+        <div class="note n2">Call Mom.</div>
+        <div class="note n4">Rerun the failing experiment before Thursday.</div>
+      </div>
+      <p class="wall-cap">4 of 136, written that night</p>
+    </div>
+  </div>
+</header>
+
+<!-- =================== EXCERPT, EARLY =================== -->
+<section class="band band-alt" id="excerpt">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Before anything else, read some of it.</h2>
+      <p class="lede">The whole method is one rule. Everything else in the book, the filters, the boards, the bites, the morning hour, is machinery built on top of this one sentence.</p>
+    </div>
+
+    <div class="read-grid">
+      <article class="excerpt">
+        <p class="chap">Chapter 5 &nbsp;·&nbsp; The Brain Dump</p>
+        <h3>The rule</h3>
+        <p>This chapter is the pouring. It is the single highest-return hour I can offer you, it requires no belief and no skill, and by the end of the chapter I am going to ask you to actually do it. Fair warning.</p>
+        <p>The whole method is one rule, and it deserves the solemnity of a commandment:</p>
+        <p class="rule-line">Every thought gets one card. Every card gets one place. Do this until your head is completely empty.</p>
+        <p><em>Every thought:</em> not just tasks. The load in your head is not only <em>submit the report</em>; it is <em>I should call my mother more</em>, <em>maybe the startup idea is stupid</em>, <em>learn Spanish someday</em>. Worries, dreams, guilts, vague intentions, someday-maybes: all of it occupies the same working memory and bills the same energy. If it recurs in your head, it qualifies.</p>
+        <p><em>Until empty:</em> not until tired, not until you have the important stuff. The magic of that night in my cubicle lived entirely in the last twenty minutes, in sticky notes 110 through 136, the strange, half-forgotten cargo at the bottom of the tank.</p>
+      </article>
+
+      <div class="rules-side">
+        <h3>And four of the rules it turns into</h3>
+        <p>What you cannot see, you cannot control.</p>
+        <p>Every Must of yours is someone else's Want.</p>
+        <p>Doubt with all your intelligence while planning. Then act like a fool.</p>
+        <p>Never delete Done. Reread it monthly: statistics, not emotions.</p>
+        <p class="src">Appendix B is the whole set, on one page.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== THE ACHE =================== -->
+<section class="band band-paper">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>You are not disorganized. You are running two hundred background processes.</h2>
+      <p class="lede">Your mind treats every unfinished task as a live circuit and keeps polling them, thousands of times a day, the way a nervous server polls a database. Psychology has a name for this and a Vienna café where it was found: the Zeigarnik effect, which says an unfinished task is remembered about twice as well as a finished one and stays intrusively active until it closes. None of those interruptions do any work. They just spend you.</p>
+    </div>
+
+    <div class="symptoms">
+      <div class="symptom">
+        <span class="when">At dinner</span>
+        <p>You are helping with homework and a background process interrupts: <em>the paper, did you ever send that draft to your advisor?</em></p>
+      </div>
+      <div class="symptom">
+        <span class="when">At 3 AM</span>
+        <p>The moment you lie down, the unfinished business begins its roll call. It is the meeting your whole day was designed to avoid.</p>
+      </div>
+      <div class="symptom">
+        <span class="when">At the desk</span>
+        <p>When a hundred things are equally loud, there is no first thing. You open one project, feel the guilt of the other six, switch, feel it again, switch again.</p>
+      </div>
+      <div class="symptom">
+        <span class="when">At home</span>
+        <p>You are physically present and mentally still in the lab. You arrive already tired, having spent yourself to zero before doing any actual work.</p>
+      </div>
+    </div>
+
+    <p class="lede" style="margin-top:34px">The diagnosis is not a capacity problem. It is a custody problem. The weight you feel is not the weight of your work; it is the overhead of storing your work in an organ that was never designed for storage. Capacity problems are hard, because hours are finite. Custody problems are easy, because paper is cheap.</p>
+  </div>
+</section>
+
+<!-- =================== THE CLAIM =================== -->
+<section class="band band-deep">
+  <div class="wrap">
+    <h2 class="sr-only">What happened that night</h2>
+    <span class="eyebrow" aria-hidden="true">What happened that night</span>
+    <p class="claim">I reached into my head, the same head that had been roaring at me for two years, and <em>it was quiet.</em></p>
+    <p class="lede" style="margin-top:26px">Nothing about my life had changed. Every obligation still existed. But all of it was out there on the wall, where I could see it, instead of up in my head, where it could only torment me.</p>
+    <div class="figures">
+      <div><b>136</b> cards, in one two-hour session</div>
+      <div><b>20 to 30%</b> of them thrown out in the first week, after three questions</div>
+      <div><b>1</b> of them still on my desk, done</div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== AUTHOR, REBUILT ON THE FAILURES =================== -->
+<section class="band band-paper">
+  <div class="wrap author">
+    <div>
+      <span class="eyebrow">Who is telling you this</span>
+      <h2 style="margin-top:14px">I have abandoned this system more than once.</h2>
+      <p class="first">Never dramatically, and never because I stopped believing in it. It simply decayed. The logistics got heavy: rewriting cards, migrating the unfinished ones, retagging, re-sorting, until planning itself became a chore to get through before the day could begin. Which is a bitter joke once you notice it, because the system whose entire purpose is to turn obligations into chosen work had itself turned into an obligation.</p>
+      <p>So I would drift off, and my head would refill, and I would be quietly miserable for a few months, and then I would come back, usually after a night that felt uncomfortably like the one in the cubicle. The recoveries are the reason I trust it. A system that only works in your good years is a system nobody has tested.</p>
+      <p>I am an engineer, which mostly means I do not trust a method I have not measured, so I kept logs. This is not a book of research: it has about one citation's worth of theory, Frankl and Zeigarnik, and fourteen chapters of what to do on Tuesday.</p>
+      <p class="cred">PhD, UC Santa Cruz, where the windowless lab in the prologue is a real room. Years at AMD on GPU instruction-set specification, released as open source. Now an assistant professor, and a founder.</p>
+    </div>
+
+    <div class="logbook">
+      <h3>From my own logs</h3>
+      <div class="rows">
+        <div class="row"><b>12+</b><span>meaningful tasks finished on a day built from work I care about, ending with energy to spare</span></div>
+        <div class="row"><b>3</b><span>is heroic on a day built from resented obligations, and I finish it hollow</span></div>
+      </div>
+      <p class="foot">Same person, same hours, a fourfold difference in throughput, decided entirely by what was flowing through the pipe. That is Chapter 13, and it is the reason Part II is about filtering rather than scheduling.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =================== BOTTLE =================== -->
+<section class="band band-alt">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Same water. Same hole. Four times the throughput.</h2>
+      <p class="lede">Your life is not a glass to be filled. It is a pipe, and a pipe is judged on flow. Take a full one-liter bottle to the kitchen sink and time it three ways. Nothing about the water or the opening changes. Only the arrangement does. Run it before you give me anything.</p>
+    </div>
+    <div class="bottle">
+      <div class="beat">
+        <p class="t">13<s>s</s></p>
+        <p class="lbl">Turned upside down</p>
+        <p>It glugs, fighting the air that must bubble in against the flow. This is the unplanned week: every switch between projects is a bubble forcing its way backward through the neck.</p>
+      </div>
+      <div class="beat">
+        <p class="t">6<s>s</s></p>
+        <p class="lbl">Swirled into a vortex</p>
+        <p>Air gets a channel down the middle. Nobody squeezed harder. The flow was organized, and throughput doubled.</p>
+      </div>
+      <div class="beat last">
+        <p class="t">3<s>s</s></p>
+        <p class="lbl">A straw through the neck</p>
+        <p>Four times the baseline. Not more effort: an arrangement. That arrangement is what Part III of the book builds, and the numbers stay with you in a way that reading them never quite manages.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== WHAT IS INSIDE =================== -->
+<section class="band band-paper" id="inside">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Four parts, in the order the method actually runs.</h2>
+      <p class="lede">Get it out of your head. Decide what deserves to stay. Put the survivors through a pipe that moves. Hand the clerical half to a machine.</p>
+    </div>
+
+    <div class="board">
+      <div class="col p1">
+        <div class="col-head"><span class="col-num">PART I</span><h3>Why your head is the worst place to keep your life</h3></div>
+        <ul>
+          <li>The Night of 136 Sticky Notes</li>
+          <li>Happiness Is a Side Effect of an Organized Life</li>
+          <li>Your Life Is a Pipe, Not a Glass</li>
+          <li>Why Smart People Stall</li>
+        </ul>
+        <p class="extra">The real cost of carrying tasks is emotional energy, not missed deadlines.</p>
+      </div>
+
+      <div class="col p2">
+        <div class="col-head"><span class="col-num">PART II</span><h3>Emptying your head</h3></div>
+        <ul>
+          <li>The Brain Dump</li>
+          <li>Want vs. Must</li>
+          <li>The Mission Filter</li>
+          <li>The Five Areas</li>
+        </ul>
+        <p class="extra">The two-hour protocol, then three filters that decide what is allowed into your life at all.</p>
+      </div>
+
+      <div class="col p3">
+        <div class="col-head"><span class="col-num">PART III</span><h3>Building the flow</h3></div>
+        <ul>
+          <li>Kanban Your Life</li>
+          <li>Eating the Elephant</li>
+          <li>The Kaizen Hour and the Monthly Review</li>
+          <li>Habits, Projects, and the 24-Hour Pipe</li>
+          <li>Energy Beats Willpower</li>
+        </ul>
+        <p class="extra">Year board, month board, and one Today column loaded to the day's real width and no wider.</p>
+      </div>
+
+      <div class="col p4">
+        <div class="col-head"><span class="col-num">PART IV</span><h3>The AI-powered second brain</h3></div>
+        <ul>
+          <li>Brain Dump Into an AI</li>
+          <li>AI as Your Filter and Butcher</li>
+          <li>Why I Built My Own Assistant</li>
+        </ul>
+        <p class="extra">What a model does well, and the one job that stays human.</p>
+      </div>
+    </div>
+
+    <figure class="diagram">
+      <div class="diagram-scroll">
+      <svg viewBox="0 0 560 226" role="img" aria-label="A three column board. Need to do holds many cards, Today holds exactly three under a capacity line, Done keeps the finished ones.">
+        <g font-family="Lato, sans-serif" font-size="13" font-weight="900" letter-spacing="1.6" fill="currentColor">
+          <text x="20" y="18">NEED TO DO</text>
+          <text x="200" y="18">TODAY</text>
+          <text x="380" y="18">DONE</text>
+        </g>
+        <g stroke="currentColor" stroke-opacity=".28" stroke-width="1">
+          <line x1="20" y1="28" x2="180" y2="28"/><line x1="200" y1="28" x2="360" y2="28"/><line x1="380" y1="28" x2="540" y2="28"/>
+        </g>
+        <g>
+          <rect x="20" y="44" width="160" height="24" rx="2" fill="#96b9de"/>
+          <rect x="20" y="76" width="160" height="24" rx="2" fill="#b3cd93"/>
+          <rect x="20" y="108" width="160" height="24" rx="2" fill="#f2a693"/>
+          <rect x="20" y="140" width="160" height="24" rx="2" fill="#c6a9dd"/>
+          <rect x="20" y="172" width="160" height="24" rx="2" fill="#f2ce55"/>
+          <text x="20" y="214" font-family="Lato, sans-serif" font-size="14" fill="currentColor" fill-opacity=".6">and 131 more, all visible</text>
+        </g>
+        <g>
+          <rect x="200" y="44" width="160" height="24" rx="2" fill="#f2ce55"/>
+          <rect x="200" y="76" width="160" height="24" rx="2" fill="#b3cd93"/>
+          <rect x="200" y="108" width="160" height="24" rx="2" fill="#f2a693"/>
+          <line x1="200" y1="146" x2="360" y2="146" stroke="currentColor" stroke-opacity=".55" stroke-width="2" stroke-dasharray="6 5"/>
+          <text x="200" y="166" font-family="Lato, sans-serif" font-size="14" fill="currentColor" fill-opacity=".6">the day's real width</text>
+        </g>
+        <g fill-opacity=".45">
+          <rect x="380" y="44" width="160" height="24" rx="2" fill="#96b9de"/>
+          <rect x="380" y="76" width="160" height="24" rx="2" fill="#f2ce55"/>
+          <rect x="380" y="108" width="160" height="24" rx="2" fill="#b3cd93"/>
+        </g>
+        <text x="380" y="166" font-family="Lato, sans-serif" font-size="14" fill="currentColor" fill-opacity=".6">never deleted</text>
+      </svg>
+      </div>
+      <figcaption>Today is the bottleneck of every board you own. One Today column, total, loaded to what the day and the body actually contain.</figcaption>
+    </figure>
+
+    <p class="lede" style="margin-top:36px">Plus a 30-day schedule that installs the whole system in short sessions, or in one weekend if that is your temperament. Chapters 5 and 10 end by asking you to put the book down and do the thing, because a planning book you only read is a planning book that failed.</p>
+  </div>
+</section>
+
+<!-- =================== FIT =================== -->
+<section class="band band-alt">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Who this is for, and who it is not for.</h2>
+    </div>
+    <div class="fit">
+      <div class="fit-col yes">
+        <h3>Read this if</h3>
+        <ul>
+          <li>You are carrying a PhD, a team, a course, a company or a family, and more than one of them at once.</li>
+          <li>Your problem is load, and load has a different fix than effort does.</li>
+          <li>You have tried apps, and the apps became another thing to maintain.</li>
+          <li>You run Kanban at work and have never once pointed any of it at your own life.</li>
+        </ul>
+      </div>
+      <div class="fit-col no">
+        <h3>Skip this if</h3>
+        <ul>
+          <li>You want Getting Things Done with sticky notes. GTD captures your work; this filters your life, and twenty to thirty percent of your wall will not survive it.</li>
+          <li>You want a survey of the productivity literature. This is one person's tested system, not a review.</li>
+          <li>You are looking for motivation. This book assumes you are already trying too hard.</li>
+          <li>You will not give it one evening. That is the entire ask, and nothing works without it.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== AI + DISCLOSURE =================== -->
+<section class="band band-deep">
+  <div class="wrap split">
+    <div>
+      <h2>I built the tool this book describes. Here is what that means for you.</h2>
+      <p class="lede">Part IV is three chapters on handing the clerical half of this system to a language model: tagging, splitting, rephrasing, flagging the card that has migrated three months running. I could not find a tool that ran the flow, so I built one for a user base of one, myself. It is called Reasonbase, and Chapter 16 says so.</p>
+      <p class="lede">Chapter 16 also says: no tool installs the system. The stayers were always the people who had once emptied their head all the way to the bottom. Everything that matters here works on sticky notes and costs nothing, and people have built empires on cork boards. In the book's own words, that is exactly why this is a book and not a landing page.</p>
+    </div>
+    <div class="chapter-list">
+      <div class="chapter-row">
+        <h3><span class="n">14</span> Brain Dump Into an AI</h3>
+        <p>Voice capture at zero friction, and why the principles survive the change of medium. The book still tells you to start on paper, with your hands.</p>
+      </div>
+      <div class="chapter-row">
+        <h3><span class="n">15</span> AI as Your Filter and Butcher</h3>
+        <p>Classification, splitting elephants, measurable phrasing, monthly statistics. Written so you can run it with any assistant you already pay for.</p>
+      </div>
+      <div class="chapter-row">
+        <h3><span class="n">16</span> Why I Built My Own Assistant</h3>
+        <p>What a tool can amplify and what it cannot substitute for. The filter stays human, because no model knows your mission.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SIGNUP, LAST =================== -->
+<section class="band signup-band" id="session">
+  <div class="wrap signup-grid">
+    <div>
+      <span class="eyebrow">You can do the first part tonight</span>
+      <h2>Two hours, one pad of sticky notes, one page of instructions.</h2>
+      <p class="lede">Chapter 5 is a session you can run tonight without reading anything else, so I have put it on one page and I will send it to you. It is the only part of this system that works before you believe any of it. I will also write once, on the day the book is out. No sequence, no funnel, no course.</p>
+      <form class="signup" id="rules-form" novalidate>
+        <label class="sr-only" for="signup-email">Email address</label>
+        <input id="signup-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+        <button class="btn" type="submit" id="signup-submit">Send me the session sheet</button>
+      </form>
+      <p class="signup-msg" id="signup-msg" role="status" aria-live="polite" hidden></p>
+      <p class="signup-note">Then, some evening this week: two protected hours, alone, until you reach for the next thought and find nothing there. What you are after is the night described at the end of the book, when you lie down and there is no meeting, and falling asleep is just falling asleep.</p>
+    </div>
+
+    <div class="sheet">
+      <h3>What is on the sheet</h3>
+      <ul>
+        <li>What to buy, and why at least 150 notes.</li>
+        <li>How to set the stage, and why the presence of one other person turns writing into performance.</li>
+        <li>What counts as a thought. Not only tasks.</li>
+        <li>Why a formulated sentence beats a keyword, and the one word on a card that jams everything after it.</li>
+        <li>The fifteen-minute test that ends the session, and what it feels like when it lands.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <p>© 2026 Nursultan Kabylkas. The spark for this method was a seminar on Kaizen planning by Margulan Seissembai, credited properly in the front matter of the book. Kaizen, Kanban and Ikigai are the heritage of a great many people; what is mine here is the testing. The author's software is at <a href="https://reasonbase.io">reasonbase.io</a>, and the book works entirely without it.</p>
+    <p>This book describes one person's experience. It is not medical or psychological advice. If you are struggling with anxiety, insomnia or burnout, please talk to a qualified professional.</p>
+  </div>
+</footer>
+
+<script>
+  /* ---------------------------------------------------------------
+     SET THESE TWO BEFORE THE PAGE GOES LIVE
+     1. FORM_ENDPOINT: REQUIRED. Your form handler (Formspree, Buttondown,
+        ConvertKit, anything that accepts a JSON POST with {email}).
+        Until this is set, the form cannot collect anything. The artifact
+        storage fallback below only works for signed-in viewers with edit
+        rights, so it is for your own testing, not for public visitors.
+     2. AMAZON_URL: paste the Amazon link on launch day. Every
+        "Send me the session sheet" button becomes "Buy on Amazon".
+  --------------------------------------------------------------- */
+  const FORM_ENDPOINT = "";
+  const AMAZON_URL = "";
+
+  if (AMAZON_URL) {
+    document.querySelectorAll("[data-buy]").forEach(function (el) {
+      el.href = AMAZON_URL;
+      el.textContent = "Buy on Amazon";
+    });
+    document.querySelectorAll(".fineprint b").forEach(function (b) { b.textContent = "Out now."; });
+  }
+
+  (function () {
+    var form = document.getElementById("rules-form");
+    var msg = document.getElementById("signup-msg");
+    var btn = document.getElementById("signup-submit");
+    if (!form || !msg || !btn) return;
+
+    if (!FORM_ENDPOINT) {
+      console.warn("Landing page: FORM_ENDPOINT is empty, so the signup form cannot collect addresses. Set it in the inline script.");
+    }
+
+    function say(text, ok) {
+      msg.textContent = text;
+      msg.className = "signup-msg " + (ok ? "ok" : "err");
+      msg.hidden = false;
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var email = document.getElementById("signup-email").value.trim();
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+        say("That does not look like an email address. Try again.", false);
+        return;
+      }
+      btn.disabled = true;
+      btn.textContent = "Sending";
+
+      var send;
+      if (FORM_ENDPOINT) {
+        send = fetch(FORM_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify({ email: email })
+        }).then(function (res) { if (!res.ok) throw new Error("rejected"); });
+      } else if (window.claude && window.claude.use) {
+        // use() can sit unresolved for ~10s when no viewer answers; fail faster than that
+        var resolveDb = Promise.race([
+          window.claude.use("db"),
+          new Promise(function (r) { setTimeout(function () { r(null); }, 4000); })
+        ]);
+        send = resolveDb.then(function (db) {
+          if (!db) throw new Error("no store");
+          var id = "e" + Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+          return db.doc("signups/" + id).set({ email: email, at: new Date().toISOString() });
+        });
+      } else {
+        send = Promise.reject(new Error("not configured"));
+      }
+
+      send.then(function () {
+        form.hidden = true;
+        say("Got it. The session sheet is on its way, and I will write once more on the day the book is out.", true);
+      }).catch(function () {
+        btn.disabled = false;
+        btn.textContent = "Send me the session sheet";
+        say("That did not go through. Reach me through reasonbase.io and I will send the sheet myself.", false);
+      });
+    });
+  })();
+</script>
+</body>
+</html>
