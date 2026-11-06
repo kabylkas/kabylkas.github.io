@@ -115,6 +115,8 @@ h1 em { color: var(--accent); font-style: italic; font-weight: 500; }
 .gtm .facts { font-size: 8.8pt; color: var(--text-2); line-height: 1.32; }
 .gtm .facts strong { color: var(--text-1); }
 .book { color: var(--accent); font-weight: 600; text-decoration: none; }
+.watch { color: var(--accent); font-weight: 600; text-decoration: none; white-space: nowrap; }
+.watch b { display: inline-block; width: 1.35em; height: 1.35em; line-height: 1.35em; text-align: center; border-radius: 50%; background: var(--accent); color: var(--cream); font-size: .62em; vertical-align: .18em; margin-right: 4px; padding-left: .1em; box-sizing: border-box; }
 
 /* ── market ──────────────────────────────────────────────────────────── */
 .eq { display: flex; align-items: flex-end; gap: 6px; flex-wrap: nowrap; }
@@ -231,7 +233,7 @@ h1 em { color: var(--accent); font-style: italic; font-weight: 500; }
   </header>
 
   <h1 class="rise" style="--d:.08s" id="headline">Students use AI to skip the work.<br>We use AI to <em>bring it back.</em></h1>
-  <p class="dek rise" style="--d:.14s">Practice and proctored quizzes that ChatGPT can't do for you: verified problems for programming and Verilog courses, retold for each student.</p>
+  <p class="dek rise" style="--d:.14s">Practice and proctored quizzes that ChatGPT can't do for you: verified problems for programming and Verilog courses, retold for each student. <a class="watch" data-href="video" href="#"><b>▶</b>Watch the 3-min demo</a></p>
 
   <div class="flow rise" style="--d:.17s">
     <div class="step"><span class="k">01</span><span class="t">Professor picks topics</span></div>
@@ -361,6 +363,7 @@ const CONFIG = {
   marketPrice: 30,       // $ per course seat for the market bands until price is set
   milestone: "5 paying departments",
   booking: "https://reasonbase.io/p/book-20-min-with-codereps-ai",
+  video: "https://www.youtube.com/watch?v=7MmEDbj0LjM",  // 3:00 product demo, unlisted
   email: "kabylkas@codereps.ai",
   date: "November 2026",
 };
@@ -382,6 +385,7 @@ const money = d => d >= 1e9 ? "$" + +(d / 1e9).toFixed(d < 1e10 ? 1 : 0) + "B" :
 document.querySelectorAll("[data-seats]").forEach(el => el.textContent = money(Number(el.dataset.seats) * seatPrice));
 document.querySelectorAll(".mprice").forEach(el => el.textContent = "$" + seatPrice);
 const booking = CONFIG.booking && CONFIG.booking + (CONFIG.booking.includes("?") ? "&" : "?") + "utm_content=" + variant;
+document.querySelectorAll('[data-href="video"]').forEach(a => CONFIG.video ? a.href = CONFIG.video : a.remove());
 document.querySelectorAll('[data-href="booking"]').forEach(a => a.href = booking || "mailto:" + CONFIG.email);
 document.querySelector('[data-href="mailto"]').href = "mailto:" + CONFIG.email;
 </script>
