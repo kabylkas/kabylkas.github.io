@@ -136,6 +136,10 @@ h1 em { color: var(--accent); font-style: italic; font-weight: 500; }
 .som .lv .sub { color: rgba(255,255,255,.75); }
 .lv .n { margin-left: 8px; min-width: 44px; text-align: right; font-family: var(--display); font-size: 12pt; color: var(--accent); white-space: nowrap; }
 .som .lv .n { color: #fff; }
+.meth { list-style: none; margin: 2px 0 0; padding: 0; display: grid; gap: 4px; counter-reset: m; }
+.meth li { position: relative; padding-left: 19px; font-size: 8.6pt; line-height: 1.3; color: var(--text-2); counter-increment: m; }
+.meth li::before { content: counter(m, decimal-leading-zero); position: absolute; left: 0; top: .2em; font-family: var(--mono); font-size: 7pt; color: var(--accent); }
+.meth b { color: var(--text-1); }
 .ev { display: grid; gap: 1px; margin-top: 6px; border-top: 1px solid var(--border-subtle); padding-top: 5px; }
 .ev > div { display: flex; gap: 7px; align-items: baseline; }
 .ev .n { font-family: var(--display); font-weight: 600; font-size: 12pt; color: var(--accent); white-space: nowrap; min-width: 46px; }
@@ -143,14 +147,6 @@ h1 em { color: var(--accent); font-style: italic; font-weight: 500; }
 .anchor { margin-top: 5px; font-size: 8.6pt; color: var(--text-2); }
 
 /* ── landscape 2×2 ───────────────────────────────────────────────────── */
-.map2 { display: grid; grid-template-columns: 58px 1fr 1fr; grid-template-rows: 14px 42px 42px; gap: 4px; }
-.map2 .q { border-radius: 6px; background: var(--surface); font-size: 8.2pt; color: var(--text-2); padding: 5px 7px; display: flex; flex-direction: column; justify-content: center; gap: 1px; }
-.map2 .q.us { background: var(--accent); color: #fff; font-weight: 600; font-size: 9.6pt; }
-.map2 .q.empty { background: transparent; border: 1px dashed var(--border); color: var(--text-3); font-size: 7.6pt; }
-.map2 .ax { font-family: var(--mono); font-size: 7pt; color: var(--text-2); letter-spacing: .04em; display: flex; align-items: center; justify-content: center; text-align: center; }
-.map2 .ay { justify-content: flex-end; text-align: right; padding-right: 2px; line-height: 1.15; }
-.map2 .q .chip { font-size: 7pt; color: var(--accent-2); font-weight: 500; }
-.map2 .q .chip s { text-decoration: none; opacity: .85; }
 .claim { margin-top: 6px; font-weight: 600; font-size: 9.4pt; }
 
 /* ── close ───────────────────────────────────────────────────────────── */
@@ -201,7 +197,6 @@ h1 em { color: var(--accent); font-style: italic; font-weight: 500; }
   .fan p { font-size: 16px; } .fan .who { font-size: 10.5px; }
   .same { font-size: 13.5px; }
   .ev .n { font-size: 20px; } .ev .t { font-size: 12.5px; } .lv { font-size: 14px; } .lv b { font-size: 10px; } .lv .n { font-size: 20px; } .lv .sub { font-size: 10px; } .anchor { font-size: 13.5px; }
-  .map2 { display: grid; grid-template-columns: 58px 1fr 1fr; grid-template-rows: 14px 50px 50px; gap: 4px; } .map2 .q { font-size: 13px; } .map2 .q.us { font-size: 15px; } .map2 .ax { font-size: 9.5px; }
   .claim { font-size: 15px; }
   .window { grid-template-columns: 1fr; }
   .window p { font-size: 15px; }
@@ -209,9 +204,7 @@ h1 em { color: var(--accent); font-style: italic; font-weight: 500; }
   .fine, .foot { font-size: 10.5px; }
   .obs { font-size: 12px; }
   .big { font-size: 19px; }
-  .moat, .gtm .facts { font-size: 14px; }
-  .map2 { grid-template-columns: 68px 1fr 1fr; grid-template-rows: auto 64px 64px; }
-  .map2 .q .chip { font-size: 11px; }
+  .moat, .gtm .facts, .meth li { font-size: 14px; } .meth li { padding-left: 26px; } .meth li::before { font-size: 10.5px; }
   .funnel { flex-wrap: wrap; }
   .funnel .c { font-size: 13.5px; } .funnel .c small { font-size: 10px; }
 }
@@ -233,7 +226,7 @@ h1 em { color: var(--accent); font-style: italic; font-weight: 500; }
   </header>
 
   <h1 class="rise" style="--d:.08s" id="headline">Students use AI to skip the work.<br>We use AI to <em>bring it back.</em></h1>
-  <p class="dek rise" style="--d:.14s">Practice and proctored quizzes that ChatGPT can't do for you: verified problems for programming and Verilog courses, retold for each student. <a class="watch" data-href="video" href="#"><b>▶</b>Watch the 3-min demo</a></p>
+  <p class="dek rise" style="--d:.14s">AI turned against the shortcut: verified practice by the hundred for programming and Verilog courses, retold for each student and graded automatically at any class size. <a class="watch" data-href="video" href="#"><b>▶</b>Watch the 3-min demo</a></p>
 
   <div class="flow rise" style="--d:.17s">
     <div class="step"><span class="k">01</span><span class="t">Professor picks topics</span></div>
@@ -282,24 +275,17 @@ h1 em { color: var(--accent); font-style: italic; font-weight: 500; }
 
   <div class="grid2 rise" style="--d:.44s">
     <div class="box">
-      <h2>Landscape · who checks the problems?</h2>
-      <div class="map2">
-        <div></div>
-        <div class="ax">a person checks</div>
-        <div class="ax">AI writes, code verifies</div>
-        <div class="ax ay">per student</div>
-        <div class="q">PrairieLearn · Codio<span class="fine">variants, checked by staff</span></div>
-        <div class="q us">codereps.ai<span class="chip">verified · retold per student</span></div>
-        <div class="ax ay">same for everyone</div>
-        <div class="q">zyBooks · Gradescope<span class="fine">incl. AI drafts, checked by hand</span></div>
-        <div class="q empty">Professor + ChatGPT<span>nobody checks, no tests</span></div>
-      </div>
-      <p class="moat"><strong>The difference is verification:</strong> elsewhere a person checks each problem; ours must pass hidden tests in a sandbox before students see it.</p>
+      <h2>Methodology · the practice is the exam</h2>
+      <ol class="meth">
+        <li><b>Exam tickets.</b> Professors generate a pool, say 30 problems for the week. The quiz draws 5 of them at random.</li>
+        <li><b>100% aligned.</b> Quiz problems are the ones students practised, so they know exactly what to study and try to solve them all.</li>
+        <li><b>Metacognition.</b> With chatbots, students overrate what they know <span class="fine">(ICER 2024)</span>. Here they do the thinking, and hidden tests show what they really know.</li>
+        <li><b>Their pedagogy.</b> Professors steer the AI with their own instructions: scaffolding, common mistakes, the framing they teach with.</li>
+      </ol>
       <div class="ev">
         <div><span class="n">+7 mo</span><span class="t">progress from teaching metacognition <span class="fine">(EEF)</span></span></div>
         <div><span class="n">−17%</span><span class="t">exam grades after practice with plain GPT-4 <span class="fine">(PNAS 2025)</span></span></div>
       </div>
-      <p class="moat">With chatbots, students overrate what they know <span class="fine">(ICER 2024)</span>. Here they do the thinking, and hidden tests show what they really know.</p>
     </div>
     <div class="box">
       <h2>Market · revenue a year, worldwide</h2>
